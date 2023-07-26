@@ -1,0 +1,92 @@
+@import "mixins";
+
+.header {
+  @include flex-between;
+  padding: 24px 16px;
+
+  &__logo {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+  }
+
+  &__logo svg {
+    width: 145px;
+  }
+  &__burger {
+    position: relative;
+    width: 24px;
+    height: 20px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__burger span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+  }
+}
+
+.header__menu {
+  display: none;
+}
+
+@media screen and (min-width: 960px) {
+  .header {
+    padding: 24px 150px;
+    grid-template-columns: auto 1fr;
+
+    &__logo svg {
+      width: 194px;
+    }
+
+    &__burger {
+      display: none;
+    }
+  }
+  .header__menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .menu {
+      margin-right: 1vw;
+      display: flex;
+      justify-content: space-between;
+      max-width: 100%;
+
+      &__list {
+        display: flex;
+        align-items: center;
+      }
+
+      &__item {
+        margin: 0 1.3vw;
+      }
+
+      &__item a {
+        color: var(--text-description);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 150%;
+      }
+    }
+    &__button {
+      padding: 12px 23px 12px 24px;
+      background-color: var(--primary-color);
+      border-radius: 5px;
+
+      color: var(--text);
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 150%; /* 24px */
+      text-transform: capitalize;
+    }
+  }
+}

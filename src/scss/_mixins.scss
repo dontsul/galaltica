@@ -1,0 +1,65 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin column-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@mixin line {
+  position: absolute;
+  content: " ";
+  background-color: var(--secondary-color);
+  height: 12px;
+  border-radius: 8px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+@mixin title {
+  color: var(--text-title);
+  text-align: center;
+  font-family: Exo;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 140%; /* 33.6px */
+  text-transform: capitalize;
+  z-index: 10;
+  margin-bottom: 40px;
+}
+
+@mixin text {
+  color: var(--text-description);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+@mixin services-title {
+  color: var(--text);
+  font-family: Exo;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 140%;
+  text-transform: capitalize;
+  text-align: center;
+}
+@mixin services-item {
+  color: var(--text);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 140%;
+  text-transform: capitalize;
+}

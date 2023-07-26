@@ -1,0 +1,91 @@
+@import "mixins";
+
+.footer {
+  padding: 64px 0 32px 0;
+  background-color: var(--bg-footer);
+  @include column-center;
+
+  &__logo {
+    margin-bottom: 24px;
+  }
+  &__logo a svg {
+    width: 145px;
+  }
+
+  &__list {
+    @include column-center;
+    margin-bottom: 28px;
+
+    &__item {
+      color: var(--text-title);
+      text-align: center;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 21px */
+      text-transform: capitalize;
+      padding: 13.5px;
+    }
+  }
+
+  &__wrap-social {
+    @include flex-center;
+    gap: 24px;
+    margin-bottom: 28px;
+  }
+
+  &__contact {
+    @include column-center;
+
+    &__text {
+      margin-bottom: 8px;
+      color: var(--text-title);
+      text-align: center;
+      font-family: Exo;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 140%; /* 19.6px */
+      text-transform: capitalize;
+    }
+    &__email {
+      color: var(--text-description);
+      text-align: center;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 150%; /* 21px */
+    }
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .footer {
+    &__logo a svg {
+      width: 194px;
+    }
+    &__list {
+      flex-direction: row;
+      gap: 46px;
+      &__item {
+        color: var(--text-description);
+        font-size: 16px;
+        font-weight: 600;
+
+        padding: 0;
+      }
+    }
+
+    &__wrap-social {
+      @include flex-center;
+      gap: 24px;
+    }
+
+    &__contact {
+      &__text {
+        font-size: 16px;
+      }
+      &__email {
+        font-size: 16px;
+      }
+    }
+  }
+}
